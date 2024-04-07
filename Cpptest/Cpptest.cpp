@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int total(int price, int quant) {
-    return price * quant;
+void total(int price, int quant, int *result) {
+    *result = price * quant;
 }
 
 int main() {
@@ -42,7 +42,8 @@ int main() {
                 int num;
                 cin >> num;
 
-                int totalprice = total(prices[a - 1], num);
+                int totalprice;
+                total(prices[a - 1], num, &totalprice);
 
                 cout << endl << num << "개의 " << menu[a - 1] << "을(를) 구매하셨습니다." << endl;
                 cout << "총 가격은 " << totalprice << "원 입니다." << endl;
